@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estárter Transporte y Turismo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/Logo.png" alt="Logo Estárter">
+        <button class="menu-toggle" onclick="toggleMenu()">≡</button> <!-- Botón para activar el menú -->
+        <div class="menu">
+            <div class="dropdown">
+                <span>Ciudades</span>
+                <ul id="cities">
+                    <li>Bogota</li>
+                    <li>Medellin</li>
+                    <li>Cartagena</li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <span>Servicios</span>
+                <ul id="services">
+                    <li>Empresarial</li>
+                    <li>Traslados urbanos</li>
+                    <li>Transporte turístico</li>
+                    <li>Transporte escolar</li>
+                    <li>Transporte eventos</li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <span>Tours</span>
+                <ul id="tours">
+                    <li>Tour por Bogota</li>
+                    <li>Tour por Medellin</li>
+                    <li>Tour por Cartagena</li>
+                </ul>
+            </div>
+            <button onclick="mostrarCotizador()">Cotizar servicios</button>
+        </div>
+    </header>
+
+    <section>
+        <div class="banner">
+            <img src="./img/bogota-cap.jpg" alt="Banner">
+            <div class="banner-text">
+                <h2>Transporte especial de pasajeros en Colombia</h2>
+                <p>Traslado empresarial – Viaje fuera de la ciudad – Traslado dentro de la ciudad – Transporte turistico y City Tours</p>
+            </div>
+        </div>
+    </section>  
+    <section class="section">
+        <div class="section-image">
+            <img src="./img/mapaybus.png" alt="Imagen Sección">
+            <div class="section-image-text">
+                <h1>Servicios especiales de transporte en Colombia</h1> 
+                <p>Estárter es transporte empresarial y turístico en Colombia</p> 
+                <p>Encuentra soluciones ágiles, ajustadas a cada tipo de empresa, garantizando el confort y seguridad de sus colaboradores; movilizando su personal desde y hacia la empresa, con la eficacia y seguridad que siempre ha caracterizado nuestros servicios de transporte especial, corpotarivo y turístico</p>
+                <button onclick="mostrarCotizador()">Cotizar servicios</button>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br>
+    <section class="section">
+        <h2>Servicios de transporte de pasajeros en Colombia</h2><br>
+        <p>En estárter disponemos de una variedad de servicios de transporte tanto para empresas como para particulares desde y hacia cualquier lugar del país.</p><br>
+        <div class="container">
+            <div class="box">
+                <img src="./img/ASX4BAPPRBBNRISP2HJN7AZUBU.jpg" alt="Rutas Corporativas">
+                <h3>Rutas Corporativas</h3>
+                <p>Este tipo de servicio es especial para empresas que requieren transporte diario para sus empleados</p>
+            </div>
+            <div class="box">
+                <img src="./img/Bus-GuianzaExpress.jpg" alt="Viaje fuera de la ciudad">
+                <h3>Viaje fuera de la ciudad</h3>
+                <p>¿A qué ciudad te diriges?</p>
+                <input type="search" placeholder="Buscar ciudad...">
+            </div>
+            <div class="box">
+                <img src="./img/aeropuerto.jpeg" alt="Traslado urbano">
+                <h3>Traslado urbano</h3>
+                <p>Necesitas un transporte para moverte dentro de la ciudad de forma ocasional, nosotros te llevamos.</p>
+            </div>
+            <div class="box">
+                <img src="./img/medellintour.jpg" alt="Tour">
+                <h3>Tours</h3>
+                <p>Tours Guiados en las principales ciudades de Colombia</p>
+            </div>
+        </div>
+        <button onclick="mostrarCotizador()">Cotizar servicios</button>
+    </section>
+    <br><br><br><br>
+    <section class="section">
+        <h2>Los mejores vehículos para transporte empresarial en Colombia</h2>
+        <p>Camionetas, Vans, Buses y todo tipo de vehículos para transportar su empresa.</p>
+        <div class="container">
+            <!-- Repetir este bloque 6 veces para los 6 contenedores -->
+            <div class="box">
+                <img src="./img/WhatsApp Image 2023-10-11 at 22.45.50 (1).jpeg" alt="Vehículo 1">
+                <p>Camionetas, capacidad 3 pasajeros</p>
+            </div>
+            <div class="box">
+                <img src="./img/WhatsApp Image 2023-10-11 at 22.45.50.jpeg" alt="Vehículo 2">
+                <p>Vehiculo tipo Van de hasta 7 pasajeros</p>
+            </div>
+            <div class="box">
+                <img src="./img/WhatsApp Image 2023-10-11 at 22.45.51 (1).jpeg" alt="Vehículo 3">
+                <p>Buses de 40 pasajeros</p>
+            </div>
+            <div class="box">
+                <img src="./img/WhatsApp Image 2023-10-11 at 22.45.51.jpeg" alt="Vehículo 4">
+                <p>Vehículo tipo van de hasta 17 pasajeros</p>
+            </div>
+
+            <!-- Fin de la repetición -->
+        </div>
+    </section>
+    <!-- Sección de Cotización -->
+    <section id="cotizador" style="display: none;">
+        <div class="content-wrapper">
+        <h2>Cotiza aquí tus servicios</h2>
+        <form id="cotizacionForm">
+            <div class="input-group">
+                <label for="tipoServicio">Tipo de servicio:</label>
+                <select id="tipoServicio">
+                    <option value="empresarial">Empresarial</option>
+                    <option value="traslados">Traslados urbanos</option>
+                    <option value="turistico">Transporte turístico</option>
+                    <option value="escolar">Transporte escolar</option>
+                    <option value="eventos">Transporte eventos</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="ciudad">Ciudad del servicio:</label>
+                <select id="ciudad">
+                    <option value="bogota">Bogota</option>
+                    <option value="medellin">Medellin</option>
+                    <option value="cartagena">Cartagena</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="fecha">Fecha del servicio:</label>
+                <input type="date" id="fecha">
+            </div>
+
+            <div class="input-group">
+                <label for="viajeros">Cantidad de viajeros:</label>
+                <input type="number" id="viajeros" min="1" required>
+            </div>
+
+            <button type="button" onclick="calcularCotizacion()">Cotizar</button>
+            
+        </form>
+        </div>
+        <div id="resultado">
+            <h3>Valor del servicio: <span id="valorCotizacion">0</span></h3>
+            <button id="btnReservar" type="button">Reservar</button>
+            <button onclick="regresar()" id="btn-regresar">Volver</button>
+
+        </div>
+    </section>
+    <!--SECCION DATOS DE VIAJERO-->
+    <section id="datosViajeros" style="display: none;">
+        <h2>Datos de los viajeros:</h2>
+        
+        <div class="inputGroup">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        
+        <div class="inputGroup">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido">
+        </div>
+        
+        <div class="inputGroup">
+            <label for="documento">Documento de identidad:</label>
+            <input type="text" id="documento" name="documento">
+        </div>
+        
+        <div class="inputGroup">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo">
+        </div>
+        
+        <div class="inputGroup">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+        </div>
+        
+        <div class="inputGroup">
+            <label for="origen">Dirección de origen:</label>
+            <input type="text" id="origen" name="origen">
+        </div>
+        
+        <div class="inputGroup">
+            <label for="destino">Dirección de destino:</label>
+            <input type="text" id="destino" name="destino">
+        </div>
+    
+        <div class="buttonGroup">
+            <button type="button" onclick="procesarPago()" id="pagar">Pagar</button>
+            <button type="button" id="btnVolver">Volver</button>
+        </div>
+        
+    </section>
+       
+
+</section>
+    <footer>
+        <!-- Contenido del footer -->
+        <p>Políticas de privacidad y tratamiento de datos – Políticas Corporativas</p>
+        <p>Redes Sociales: [Iconos de redes sociales]</p>
+        <p>Copyright © 2023 Estárter Transporte y Turismo</p>
+    </footer>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

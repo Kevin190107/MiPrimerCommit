@@ -1,0 +1,678 @@
+@charset "UTF-8";
+/* Estilos Generales */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #419197;
+}
+
+h1, h2, p {
+  text-align: center;
+  line-height: 2;
+}
+
+/* Estilos para el header */
+header {
+  background-color: #001524;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  flex-direction: column;
+}
+
+header img {
+  max-width: 200px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+}
+
+header select {
+  margin: 0 40px;
+  padding: 5px;
+}
+
+header button {
+  background-color: #419197;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+header button:hover {
+  background-color: #84cfc7;
+}
+
+.menu-toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 15px;
+  position: absolute;
+  margin-left: 380px;
+}
+
+/* Estilos para el banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin: 50px 0;
+}
+.banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.banner:before img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+
+.banner-text {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  text-align: center;
+  z-index: 2;
+  font-weight: 300;
+}
+.banner-text h2 {
+  color: #FFFFFF;
+  font-size: 35px;
+}
+.banner-text p {
+  font-size: 20px;
+  color: #DAFFFB;
+}
+
+/* Estilos para la sección de servicios especiales */
+.section-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.section-image img {
+  padding: 5px;
+  max-width: 30%;
+  height: auto;
+  margin-top: -70px;
+}
+
+.section-image-text {
+  flex-basis: 45%;
+  padding: 20px;
+}
+.section-image-text h2 {
+  font-size: 1.9em;
+}
+.section-image-text p:first-of-type {
+  color: rgb(158, 157, 157);
+}
+
+/* Estilos para la sección de servicios de transporte */
+.container {
+  display: flex;
+  margin: 100px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.box {
+  flex-basis: calc(33.33% - 10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  padding: 0;
+  text-align: center;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+.box img {
+  width: 100%;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+input[type=search] {
+  padding: 5px;
+  border: 1px solid #419197;
+  width: 80%;
+  border-radius: 30px;
+}
+
+button {
+  background-color: #419197;
+  color: #FFFFFF;
+  padding: 12px 22px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px auto;
+  display: block;
+  border-radius: 40px;
+}
+button:hover {
+  background-color: #84cfc7;
+}
+
+.container .box {
+  flex-basis: calc(25% - 20px);
+  margin: 10px;
+}
+.container .box p {
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  background-color: #001524;
+  color: #FFFFFF;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.dropdown span {
+  border-bottom: 1px solid rgba(75, 175, 163, 0.5019607843);
+  background-color: #001524;
+  padding: 10px 20px;
+  color: #FFFFFF;
+}
+.dropdown ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #FFFFFF;
+  border-top: 2px solid #4BAFA3;
+  list-style: none;
+  padding: 0;
+  min-width: 150px;
+  z-index: 10;
+}
+.dropdown li {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #001524;
+}
+
+.dropdown ul li:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown:hover ul, .dropdown ul:hover {
+  display: block;
+}
+
+/* Estilos para la sección del cotizador */
+#cotizador {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: fixed; /* Fijar el cotizador al viewport */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; /* Se asegura de que esté en frente */
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+}
+
+#cotizador::before {
+  content: "";
+  position: absolute; /* Pseudo-elemento absoluto */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("/Curso JS FreeCodeCamp/clase 1/img/GUATAPE-22.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1000; /* Poner detrás del contenido del cotizador */
+  opacity: 0.5; /* Hacer la imagen un poco transparente para que se vea más clara */
+}
+
+#cotizador::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -900; /* Se asegura de que esté en frente de la imagen pero detrás del contenido */
+}
+
+#cotizador h2 {
+  font-size: 35px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#cotizador p {
+  font-size: 20px;
+  color: #84cfc7;
+  margin-bottom: 20px;
+}
+
+#cotizador input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #84cfc7;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #84cfc7;
+  display: block;
+}
+
+#cotizador select {
+  width: 80%;
+  max-width: 420px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #84cfc7;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #84cfc7;
+  display: block;
+}
+
+#cotizador button {
+  background-color: #419197;
+  color: #FFFFFF;
+  padding: 12px 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px auto;
+  display: block;
+  border-radius: 40px;
+}
+
+#cotizador button:hover {
+  background-color: #84cfc7;
+}
+
+.input-group {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+#resultado {
+  display: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+#datosViajeros {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: fixed; /* Fijar al viewport */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; /* Se asegura de que esté en frente */
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+}
+
+#datosViajeros::before {
+  content: "";
+  position: absolute; /* Pseudo-elemento absoluto */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("./img/cartagena.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1000; /* Poner detrás del contenido de datosViajeros */
+  opacity: 0.5; /* Hacer la imagen un poco transparente para que se vea más clara */
+}
+
+#datosViajeros::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -900; /* Se asegura de que esté en frente de la imagen pero detrás del contenido */
+}
+
+#btn-reservar {
+  display: none;
+  background-color: #419197;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px; /* Agrega un margen para separarlo del botón de Regresar */
+}
+
+#btn-reservar:hover {
+  background-color: #84cfc7;
+}
+
+#pagar, #btnVolver {
+  background-color: #419197;
+  color: #FFFFFF;
+  padding: 12px 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px auto;
+  display: block;
+  border-radius: 40px;
+}
+#pagar:hover, #btnVolver:hover {
+  background-color: #84cfc7;
+}
+
+.input-group input select {
+  width: 100%; /* Se expandirá para llenar la celda */
+  max-width: 300px;
+  padding: 10px;
+  margin: 0; /* Quitar margen */
+  border: 1px solid #419197;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #84cfc7;
+  justify-content: center; /* Alinea el input al inicio (izquierda) de su celda */
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 500px 600px; /* Dividido en dos columnas */
+  justify-items: end; /* Alinea los elementos al inicio (izquierda) */
+  align-items: start;
+  margin-bottom: 15px;
+  gap: 100px; /* Espacio entre columnas */
+}
+
+.input-group {
+  font-weight: bold;
+  margin: 0; /* Quitar margen */
+  color: rgb(255, 255, 255);
+  justify-self: center;
+}
+
+#cotizador button {
+  background-color: #419197;
+  color: #FFFFFF;
+  padding: 12px 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px auto;
+  display: block;
+  border-radius: 40px;
+}
+
+#cotizador button:hover {
+  background-color: #84cfc7;
+}
+
+.input-group {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+#resultado {
+  display: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* Estilos para la sección Datos de los viajeros */
+#datosViajeros h2 {
+  font-size: 28px;
+  color: #ffffff;
+  border-bottom: 1px solid #d2d6d9;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.inputGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dividido en dos columnas */
+  justify-items: start; /* Alinea los elementos al inicio (izquierda) */
+  align-items: center;
+  margin-bottom: 15px;
+  gap: -30px; /* Espacio entre columnas */
+}
+
+.inputGroup label {
+  font-weight: bold;
+  margin: 0; /* Quitar margen */
+  color: rgb(255, 255, 255);
+  justify-self: center; /* Alinea el label al final (derecha) de su celda */
+}
+
+.inputGroup input {
+  width: 100%; /* Se expandirá para llenar la celda */
+  max-width: 300px;
+  padding: 10px;
+  margin: 0; /* Quitar margen */
+  border: 1px solid #419197;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #84cfc7;
+  justify-content: center; /* Alinea el input al inicio (izquierda) de su celda */
+}
+
+.inputGroup input:focus {
+  border-color: #419197;
+  outline: none;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.buttonGroup button {
+  padding: 12px 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.buttonGroup button:first-child {
+  background-color: #419197;
+  color: #FFFFFF;
+}
+
+.buttonGroup button:last-child {
+  background-color: #d2d6d9;
+  color: #414141;
+}
+
+.buttonGroup button:hover {
+  background-color: #4BAFA3;
+}
+
+.buttonGroup button:last-child:hover {
+  background-color: #b5b9bc;
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header div {
+    margin-top: 10px;
+  }
+  .section-image {
+    flex-direction: column-reverse;
+  }
+  .container {
+    margin: 30px 20px;
+  }
+  .container .box {
+    flex-basis: calc(100% - 20px);
+  }
+  #cotizador input, #cotizador select {
+    width: 95%;
+  }
+}
+/* Sección de Cotizador */
+#cotizador {
+  overflow-y: auto; /* Agregar barra de desplazamiento si es necesario */
+  padding: 20px; /* Ajustar el padding si es necesario */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #cotizador h2 {
+    font-size: 28px; /* Reducir el tamaño de la fuente para el título */
+    margin-bottom: 15px; /* Reducir el margen inferior */
+  }
+  #cotizador p {
+    font-size: 16px; /* Reducir el tamaño de la fuente para los párrafos */
+    margin-bottom: 15px; /* Reducir el margen inferior */
+  }
+  #cotizador input, #cotizador select {
+    margin: 5px auto; /* Reducir los márgenes */
+  }
+  #cotizador button {
+    margin: 10px auto; /* Reducir los márgenes alrededor del botón */
+    padding: 8px 16px; /* Reducir el padding del botón */
+  }
+}
+@media (max-width: 768px) {
+  #datosViajeros {
+    padding: 10px;
+  }
+  #datosViajeros input .datos-viajeros input,
+  #datosViajeros select .datos-viajeros input,
+  #datosViajeros button .datos-viajeros input {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
+}
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header div {
+    margin-top: 10px;
+  }
+  .section-image {
+    flex-direction: column-reverse;
+  }
+  .container {
+    margin: 30px 20px;
+  }
+  .container .box {
+    flex-basis: calc(100% - 20px);
+  }
+  #cotizador input, #cotizador select {
+    width: 95%;
+  }
+}
+/* Sección de Cotizador */
+#cotizador {
+  overflow-y: auto; /* Agregar barra de desplazamiento si es necesario */
+  padding: 20px; /* Ajustar el padding si es necesario */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #cotizador h2 {
+    font-size: 28px; /* Reducir el tamaño de la fuente para el título */
+    margin-bottom: 15px; /* Reducir el margen inferior */
+  }
+  #cotizador p {
+    font-size: 16px; /* Reducir el tamaño de la fuente para los párrafos */
+    margin-bottom: 15px; /* Reducir el margen inferior */
+  }
+  #cotizador input, #cotizador select {
+    margin: 5px auto; /* Reducir los márgenes */
+  }
+  #cotizador button {
+    margin: 10px auto; /* Reducir los márgenes alrededor del botón */
+    padding: 8px 16px; /* Reducir el padding del botón */
+  }
+}
+@media (max-width: 768px) {
+  #datosViajeros {
+    padding: 10px;
+  }
+  #datosViajeros input .datos-viajeros input,
+  #datosViajeros select .datos-viajeros input,
+  #datosViajeros button .datos-viajeros input {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
+}
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column; /* Aseguramos que los elementos se muestren en columna */
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .menu > div.dropdown, .menu > button {
+    display: block; /* Cada elemento del menú se muestra en una línea completa */
+    margin-bottom: 10px; /* Espaciado entre elementos */
+    width: -20px; /* Ocupan todo el ancho disponible */
+  }
+  /* Cuando el menú está activo */
+  .menu.active {
+    display: flex;
+    flex-direction: column; /* Se asegura que los elementos estén en columna */
+    margin: 30px;
+  }
+}/*# sourceMappingURL=style.css.map */

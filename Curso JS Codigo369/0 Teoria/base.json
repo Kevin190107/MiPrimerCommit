@@ -1,0 +1,42 @@
+[
+    { 
+        "placa": "XYZ123", 
+        "numeroSerie": "SN1234567890", 
+        "modelo": "2024", 
+        "marca": "Mazda", 
+        "kilometraje": "12000", 
+        "tipo": "Hatchback" 
+    }, 
+    { 
+        "placa": "ABC234", 
+        "numeroSerie": "SN0987654322", 
+        "modelo": "2023", 
+        "marca": "Hyundai", 
+        "kilometraje": "11000", 
+        "tipo": "Sedán" 
+    }, 
+    { 
+        "placa": "DEF567", 
+        "numeroSerie": "SN1122334466", 
+        "modelo": "2022", 
+        "marca": "Kia", 
+        "kilometraje": "21000", 
+        "tipo": "SUV" 
+    }, 
+    { 
+        "placa": "GHI890", 
+        "numeroSerie": "SN5566778800", 
+        "modelo": "2021", 
+        "marca": "Volkswagen", 
+        "kilometraje": "24000", 
+        "tipo": "Wagon" 
+    }, 
+    { 
+        "placa": "JKL123", 
+        "numeroSerie": "SN9988776600", 
+        "modelo": "2020", 
+        "marca": "BMW", 
+        "kilometraje": "29000", 
+        "tipo": "Coupe" 
+    }
+]

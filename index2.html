@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estárter Transporte y Turismo - Cotizador</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/Logo.png" alt="Logo Estárter">
+    </header>
+    
+    <section>
+        <h2>Cotizador de Servicios</h2>
+        
+        <form id="cotizacionForm">
+            <div class="input-group">
+                <label for="tipoServicio">Tipo de servicio:</label>
+                <select id="tipoServicio">
+                    <option value="empresarial">Empresarial</option>
+                    <option value="traslados">Traslados urbanos</option>
+                    <option value="turistico">Transporte turístico</option>
+                    <option value="escolar">Transporte escolar</option>
+                    <option value="eventos">Transporte eventos</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="ciudad">Ciudad del servicio:</label>
+                <select id="ciudad">
+                    <option value="bogota">Bogota</option>
+                    <option value="medellin">Medellin</option>
+                    <option value="cartagena">Cartagena</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="fecha">Fecha del servicio:</label>
+                <input type="date" id="fecha">
+            </div>
+
+            <div class="input-group">
+                <label for="viajeros">Cantidad de viajeros:</label>
+                <input type="number" id="viajeros" min="1" required>
+            </div>
+
+            <button type="button" onclick="calcularCotizacion()">Cotizar</button>
+        </form>
+        
+        <div id="resultado">
+            <h3>Valor a pagar: $<span id="valorCotizacion">0</span></h3>
+        </div>
+    </section>
+
+    <footer>
+        <p>Políticas de privacidad y tratamiento de datos – Políticas Corporativas</p>
+        <p>Redes Sociales: [Iconos de redes sociales]</p>
+        <p>Copyright © 2023 Estárter Transporte y Turismo</p>
+    </footer>
+
+    <script src="./cotizador.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+SELECT COUNT(*) FROM libreta;
+
+
+
+
+
+
+
+
